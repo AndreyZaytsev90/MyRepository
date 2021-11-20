@@ -19,9 +19,6 @@ function App() {
     console.log("App rendering")
     return (
         <div>
-            <input/>
-            <input checked={true} type= "date"/>
-
 
             <AppTitle/>
             <Rating/>
