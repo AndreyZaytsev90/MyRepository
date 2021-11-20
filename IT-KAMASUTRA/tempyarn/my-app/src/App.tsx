@@ -23,8 +23,13 @@ function App() {
             <PageTitle title={"My friends"}/>
             Article 1
             <Rating value={3}/>
-            <Accordion/>
-            Article 1
+            <Accordion title={"Меню"}/>
+            <Accordion body={<ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>}/>
+            Article 2
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>

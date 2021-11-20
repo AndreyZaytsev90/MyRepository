@@ -1,29 +1,28 @@
 import React from "react";
 
-function Accordion() {
+function Accordion(props: any) {
     console.log("Accordion rendering")
     return <div>
-        <AccordionTitle/>
-        <AccordionBody/>
+        <AccordionTitle title = { props.title }/>
+        <AccordionBody body = { props.body }/>
     </div>
 
 }
 
-function AccordionTitle() {
+function AccordionTitle(props: any) {
     console.log("AccordionTitle rendering")
     return (
-        <h3>Меню</h3>
+        <h3>{ props.title }</h3>
     )
-
 
 }
 
-function AccordionBody() {
+function AccordionBody(props: any) {
     console.log("AccordionBody rendering")
     return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>{ props.title }</li>
+        <li>{ props.title }</li>
+        <li>{ props.title }</li>
     </ul>
 }
 
