@@ -24,11 +24,7 @@ function App() {
             Article 1
             <Rating value={3}/>
             <Accordion title={"Меню"}/>
-            <Accordion body={<ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>}/>
+            <Accordion title={"Участники"}/>
             Article 2
             <Rating value={0}/>
             <Rating value={1}/>
@@ -36,14 +32,13 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-
         </div>
     );
 }
 
 function PageTitle(props: any) {
     console.log("PageTitle rendering")
-    return <h1>{ props.title }</h1>
+    return <h1>{props.title}</h1>
 
 }
 
