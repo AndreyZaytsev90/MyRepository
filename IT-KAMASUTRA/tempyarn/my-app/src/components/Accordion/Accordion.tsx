@@ -17,10 +17,6 @@ function Accordion(props: AccordionPropsType) {
             <AccordionBody />
         </div>
     }
-
-
-
-
 }
 
 type AccordionTitlePropsType = {
@@ -30,8 +26,6 @@ type AccordionTitlePropsType = {
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return <h3>--- {props.title} ---</h3>
-
-
 }
 
 function AccordionBody(props: any) {
