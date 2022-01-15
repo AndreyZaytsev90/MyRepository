@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
@@ -20,7 +20,7 @@ function App() {
     console.log("App rendering")
     return (
         <div>
-            <PageTitle title={"This is APP component"}/>
+            {/*<PageTitle title={"This is APP component"}/>
             <PageTitle title={"My friends"}/>
             Article 1
             <Rating value={3}/>
@@ -31,8 +31,8 @@ function App() {
             <Rating value={2}/>
             <Rating value={3}/>
             <Rating value={4}/>
-            <Rating value={5}/>
-            <OnOff indicator={true}/>
+            <Rating value={5}/>*/}
+            <OnOff indicator={false}/>
         </div>
     );
 }
