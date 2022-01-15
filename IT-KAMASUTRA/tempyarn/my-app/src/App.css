@@ -1,0 +1,50 @@
+.OnOff {
+    display: flex;
+}
+
+.onGreen {
+    border:1px solid;
+    width: 220px;
+    height: 120px;
+    margin-right: 10px;
+    background-color: green;
+}
+.onWhite {
+    border:1px solid;
+    width: 220px;
+    height: 120px;
+    margin-right: 10px;
+    background-color: white;
+}
+.offRed {
+    border:1px solid;
+    width: 220px;
+    height: 120px;
+    margin-right: 10px;
+    background-color: red;
+}
+.offWhite {
+    border:1px solid;
+    width: 220px;
+    height: 120px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.bulbGreen {
+    border:1px solid;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    background-color: green;
+}
+
+.bulbRed {
+    border:1px solid;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    background-color: red;
+}
