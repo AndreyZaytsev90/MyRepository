@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 //import "../../App.css"
 
 type PropsType = {
-    indicator: boolean
+   // indicator: boolean
 }
 
 function OnOff(props: PropsType) {
+    console.log("OnOff rendering")
+
+    let [indicator, setIndicator] = useState(false)
+
+    console.log("indicator: " + indicator)
 
     const onStyle = {
         width: "100px",
@@ -13,7 +18,7 @@ function OnOff(props: PropsType) {
         border: "1px solid black",
         display: "inline-block",
         padding: "10px",
-        backgroundColor: props.indicator === true ? "greenyellow" : "white"
+        backgroundColor: indicator ? "greenyellow" : "white"
     };
     const offStyle = {
         width: "100px",
@@ -22,7 +27,7 @@ function OnOff(props: PropsType) {
         display: "inline-block",
         marginLeft: "10px",
         padding: "10px",
-        backgroundColor: !props.indicator === true ? "indianred" : "white"
+        backgroundColor: indicator ? "white" : "indianred"
     };
     const indicatorStyle = {
         width: "15px",
@@ -31,12 +36,12 @@ function OnOff(props: PropsType) {
         border: "1px solid black",
         display: "inline-block",
         marginLeft: "10px",
-        backgroundColor: !props.indicator === true ?"indianred" : "greenyellow"
+        backgroundColor: indicator ? "greenyellow" : "indianred"
     };
 
     return <div>
-        <div style={onStyle}>On</div>
-        <div style={offStyle}>Off</div>
+        <div style={onStyle} onClick={() => { setIndicator(true) }}>On</div>
+        <div style={offStyle} onClick={() => { setIndicator(false) }}>Off</div>
         <div style={indicatorStyle}/>
     </div>
  /*   if (props.indicator) {
