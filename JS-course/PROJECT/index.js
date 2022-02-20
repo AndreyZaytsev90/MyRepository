@@ -51,7 +51,7 @@ console.log(personOne.age)
 function printMyName() {
     console.log("Andrey")
 }
-setTimeout(printMyName, 2000)
+setTimeout(printMyName, )
 
 
 //ОБЛАСТИ ВИДИМОСТИ
@@ -81,6 +81,86 @@ function myFn2() {
     innerFn()
 }
 myFn2()*/
+//////////////////////////
 
+// Оператор разделения объекта на свойства (...)
+
+const button = {
+    width: 200,
+    text: "ХУЙ"
+}
+
+console.log(button)
+
+const redButton = {
+  ...button,
+    color: "red"
+}
+
+console.table(redButton)
+
+/////////////////////////////
+
+// Объединение объектов с помощью ...
+
+const myStyle = {
+    width: 94,
+    height: 183
+}
+
+const myInfo = {
+    name: "Andrey",
+    age: 31
+}
+
+const Iam = {
+    ...myInfo,
+    ...myStyle
+}
+
+console.table(Iam)
+/*{name: 'Andrey', age: 31, width: 94, height: 183}
+age: 31
+height: 183
+name: "Andrey"
+width: 94*/
+/////////////////
+
+// Конкатенация строк ("" + "") и шаблонные строки
+
+let myName  = "Andrey "
+let myCity2 = "Moscow"
+const concat = () => {
+    let concatination = `Привет! Меня зовут ${myName}! Я живу в городе ${myCity2}`
+    return concatination
+}
+concat()
+
+////////////////////////////////
+
+// Значение параметров функции по умолчанию:
+
+// Пример 1
+/*function multByFactor(value, multiplier = 1) {
+    return value*multiplier
+}*/
+   const multByFactor = (value, multiplier = 1) => value*multiplier
+
+console.log(multByFactor(10,2)) // 20
+console.log(multByFactor(100)) // 100
+
+//////////////////////////////
+// Пример 2
+const newPost = (post, addedAt = Date()) => {
+   return ({   // Date() - функция отображения текущей даты и времени. Это Значение по умолчанию, которое вычисляется в момент вызова функции newPost
+        ...post,
+        addedAt: addedAt,
+    })
+}
+const firstPost = {
+       id: 1,
+    author: "Andrey"
+}
+console.table(newPost(firstPost))
 
 
