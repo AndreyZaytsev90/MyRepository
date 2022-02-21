@@ -48,10 +48,10 @@ increasePersonOne(personOne)
 console.log(personOne.age)
 
 //Callback
-function printMyName() {
+/*function printMyName() {
     console.log("Andrey")
 }
-setTimeout(printMyName, )
+setTimeout(printMyName, )*/
 
 
 //ОБЛАСТИ ВИДИМОСТИ
@@ -164,3 +164,99 @@ const firstPost = {
 console.table(newPost(firstPost))
 
 
+
+///////////////
+//Обработка ошибок в JS
+const fnWithError = () => {
+       throw new Error("Some error")
+}
+/*
+fnWithError() // здесь код останавливается из-за ошибки index.js:171 Uncaught Error: Some error
+console.log("Continue....")
+*/
+
+//Решение TRY/Catch
+
+try {
+    fnWithError()
+} catch (error) {
+       console.error(error)
+    console.log(error.message) // - "Some error"
+}
+console.log("Continue....")
+/////////////////////////////////
+
+//Пример инструкций:
+// let a; - объявление переменной
+// const b = 5; - объявление переменной и присваивание ей значения
+
+// if(a>b) {                // с ключ. словом If
+//console.log('a is lager')
+//}
+
+/*
+for (let i = 0; i < 5; i++) {  - цикл
+    console.log(i)
+}*/
+
+
+// Выражения - инструкции:
+// 'abc';
+// a = a+3;
+// c = a+b;
+// d = 'Good' + 'Evening'
+// myFunction( c, d );
+//console.log('HEY');
+
+/////////////////////////////////////////
+
+//Массивы
+//создание массива
+const myArray = [1,2,3]
+console.log(myArray)
+//или
+const myArray2 = new Array(1,2,3)
+console.log(myArray2)
+
+console.log(myArray === myArray2) // false
+
+//Чтение значений массива
+const myArray4 = [1, false, 'Andrey']
+console.log(myArray4[0])  // 1
+console.log(myArray4[2])  // 'Andrey'
+
+// Добавление и изменение элементов в массиве
+/*
+const myArrays3 = [ 1, true, 'Andrey', 3]
+
+myArrays3.length
+4
+
+myArrays3[2] = 2
+2
+
+myArrays3
+[1, true, 2, 3]
+
+myArrays3[4] = 'Andrey'
+'Andrey'
+
+myArrays3
+[1, true, 2, 3, 'Andrey']*/
+
+
+
+////PUSH
+
+const myArrays3 = [ 1, true, 'Andrey', 3]
+myArrays3.push("Zaytsev")
+console.log(myArrays3) // [1, true, 'Andrey', 3, 'Zaytsev']
+
+//// myArrays3.pop - удаления последнего элемента массива и возвращает этот елемент. Его можно присвоить переменной (const removedElement = myArrays3.pop() )
+
+/// myArrays3.unshift = добавляет элемент в начало массива
+/// myArrays3.shift = удаляет первый элемент в массиве. Также возвращает удаленное значение и его можно присвоить переменной
+
+/// Методы push, pop , unshift и shift МУТИРУЮТ массив, а не создают новый
+
+//6.05.18
