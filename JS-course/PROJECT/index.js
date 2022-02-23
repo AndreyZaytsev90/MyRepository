@@ -259,4 +259,98 @@ console.log(myArrays3) // [1, true, 'Andrey', 3, 'Zaytsev']
 
 /// Методы push, pop , unshift и shift МУТИРУЮТ массив, а не создают новый
 
-//6.05.18
+//////////////////////////////////
+
+//ForEach - тут есть аргумент, который является функцией
+
+// Внутри этого метода находится цикла, который перебирает каждый элемент массива и вызывает callBack функцию столько раз, сколько элементов в массиве
+const myArrayForE = [1,2,3]
+console.log(myArrayForE) //[1, 2, 3]
+
+myArrayForE.forEach(el => console.log(el*2))
+//2
+//4
+//6
+console.log(myArrayForE) //[1, 2, 3], метод ForEach не меняет оригинальный массив
+
+/////////////////////
+
+//MAP - так же как и ForEach перебирает каждый элемент массива и вызывает callBack функцию столько раз, сколько элементов в массиве, при этом создается новый массив, который формируется исходя из результатов выполнения callBack функций для каждого элемента. Имеет смысл присваивать результат выполнения этого метода переменной:
+const newMyArrayForE = myArrayForE.map(el => el*5)
+console.log(newMyArrayForE)
+// метод Map не меняет оригинальный массив. Map всегда возвращает туже длину, что и  оригинальный массив.
+
+//////////////////////////////////////
+
+/// Деструктуризация объектов:
+
+const userProfile = {
+    name: "Andrey",
+    commentsQty: 31,
+    hasSingedAgreement: false
+}
+// Объвление новых переменных и присвоение значений на основе значений свойств объекта
+const {name, commentsQty } = userProfile
+const {hasSingedAgreement} = userProfile
+
+console.log(hasSingedAgreement) // false
+console.log(name) /// "Andrey"
+console.log(commentsQty) // 31
+
+/// Деструктуризация массивов:
+
+const fruits = ["Apple", "Banana"]
+
+// Объвление новых переменных и присвоение значений на основе элементиов массива:
+
+const [fruitOne, fruitTwo] = fruits
+
+console.log(fruitOne) // Apple
+console.log(fruitTwo) // Banana
+
+/// Деструктуризация в функция
+// Деструктурируем параметры в стрелочной функции из свойств объекта userProfile и присваиваем функции переменную userInfo
+const userInfo = ({name, commentsQty}) => {
+    if (!commentsQty) {
+        return `User ${name} has no comments`
+    }
+    return `User ${name} has ${commentsQty} comments`
+}
+console.log(userInfo(userProfile)) // User Andrey has 31 comments
+
+
+//////////////////////////////////////////////////
+
+//Условные инструкции (if, if...else, switch, и тернарный оператор (выражение)
+
+// Инструкция if
+/*
+if (условие) {
+    //Блок кода, выполняемый однократно, если условие правдиво
+}*/
+
+/*const noName = (a) => {
+    if (a >= 5) {
+        return a+=25
+    }
+}*/
+//// Пример if c оператором отрицания
+
+const person = {
+    age: 31
+}
+
+if (!person.name) {    // !person.name - вернет undefined. !undefined === true  > true, следовательно выполняется блок кода
+    console.log("Имя не указано")
+    // Другое действие в случае, если свойства "name" у обьекта "person" нету
+}
+
+// Инструкция if...else
+/*
+if (условие) {
+    //Блок кода, выполняемый однократно, если условие правдиво
+} else {
+    //Блок кода, выполняемый однократно, если условие ложно
+}*/
+
+// 7.03.
