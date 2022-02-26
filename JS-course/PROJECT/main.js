@@ -246,3 +246,78 @@ myFunction(cd,d) // результат функции
 
 //МОДУЛИ - позволяют структурировать код и позволяют избегать дублирования блоков кода
 // Синтаксис EXPORT/IMPORT появился в ES6
+
+//////////////////////////////////////////////////////////////////////////////
+// Классы и прототипы
+// Классы позволяют создавать прототипы для объектов
+// На основании прототипов создаются экземпляры. Каждый экземпляр имеет собственные свойства и методы. Экземпляры наследуют свойства и методы прототипов
+//Переменная this указывает на экземпляр класса
+
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+    upvote() {
+        this.votesQty +=1
+    }
+}
+// Создание экземпляра
+const firstComment = new Comment("First comment") // вызывается функция constructor
+
+// Цепочка прототипов :  firstComment > Comment > Object
+
+//Comment {text: 'First comment', votesQty: 0}
+// text: "First comment"
+// votesQty: 0
+// [[Prototype]]: Object
+
+//firstComment.text
+// 'First comment'
+//firstComment.upvote()  // при каждом вызове upvote значение votesQty увеличивается на 1
+// undefined
+// firstComment.votesQty
+// 1
+
+//Проверка принадлежности свойств экземпляру объекта:
+
+//firstComment.hasOwnProperty('text')
+// true
+
+// firstComment.hasOwnProperty('upvote')
+// false
+
+//Классы созданы для того, чтобы можно было создавать несколько экземпляров объектов с этих классов
+// const firstComment = new Comment("First comment")
+const secondComment = new Comment("Second comment")
+//secondComment.upvote()
+// undefined
+// secondComment.votesQty
+// 1
+// secondComment.upvote()
+// undefined
+// secondComment.votesQty
+// 2
+const thirdComment = new Comment("Third comment")
+
+
+
+////////////////////////////////////////////
+
+//Статические методы
+class Comment2 {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+    upvote() {
+        this.votesQty +=1
+    }
+    static mergeComments(first, second) {
+        return `${first} ${second}`
+    }
+}
+Comment2.mergeComments('First comment.', 'Second comment')  // Метод доступен как свойство класса и НЕ НАСЛЕДУЕТСЯ экземплярами класса
+
+
+///////////////////////////////////////////////
