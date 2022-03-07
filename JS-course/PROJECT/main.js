@@ -1,10 +1,10 @@
-
 'use strict'
 
 function plusOne(b) {
     b++
     return b
 }
+
 console.log(plusOne(23226));
 
 
@@ -23,12 +23,12 @@ console.log(myName);
 //Выражения:  // результаты
 "abc" // строка "abc"
 10 // число 10
-5+2 // сумма
+5 + 2 // сумма
 let cd;
-cd=10 // присвоение переменной cd значения 10
-"good"+"evening" // конкатенация строк 
+cd = 10 // присвоение переменной cd значения 10
+"good" + "evening" // конкатенация строк
 a <= b || с != d // true или false
-myFunction(cd,d) // результат функции
+myFunction(cd, d) // результат функции
 
 // Переменные дают возможность посторного доступа к значениям
 //Имена переменных:
@@ -221,7 +221,6 @@ myFunction(cd,d) // результат функции
 // (a,b) => a+b   - Фигурные скобки можно опустить, если в теле функции только ОДНО выражение. А этом случает стрельчная функция НЕЯВНО возвращает результат выражения
 
 
-
 //Инструкции
 //Есть Выражения - которые всегда возвращают значения
 // Есть инструкции , например let a (объявление переменной - это инструкция)
@@ -235,7 +234,6 @@ myFunction(cd,d) // результат функции
     console.log(a)
 }*/
 ////////////////////////////////////////
-
 
 
 // Массив - это объект с цифровыми именами свойств
@@ -258,10 +256,12 @@ class Comment {
         this.text = text
         this.votesQty = 0
     }
+
     upvote() {
-        this.votesQty +=1
+        this.votesQty += 1
     }
 }
+
 // Создание экземпляра
 const firstComment = new Comment("First comment") // вызывается функция constructor
 
@@ -301,7 +301,6 @@ const secondComment = new Comment("Second comment")
 const thirdComment = new Comment("Third comment")
 
 
-
 ////////////////////////////////////////////
 
 //Статические методы
@@ -310,24 +309,28 @@ class Comment2 {
         this.text = text
         this.votesQty = 0
     }
+
     upvote() {
-        this.votesQty +=1
+        this.votesQty += 1
     }
+
     static mergeComments(first, second) {
         return `${first} ${second}`
     }
 }
+
 Comment2.mergeComments('First comment.', 'Second comment')  // Метод доступен как свойство класса и НЕ НАСЛЕДУЕТСЯ экземплярами класса
 
 
 // Расширение других классов:
 
 class NumbersArray extends Array {  // Родительский конструктор вызовется автоматически
-    sum(){
+    sum() {
         return this.reduce((el, acc) => acc += el, 0)
     }
 }
-const myArray4 = new NumbersArray(2,5,7)
+
+const myArray4 = new NumbersArray(2, 5, 7)
 console.log(myArray4)
 myArray4.sum()
 
@@ -365,4 +368,52 @@ true
 
 // У промиса есть 3 состояния - ОЖИДАНИЕ - ИСПОЛНЕН(например, получен массив с данными от сервера) - ОТКЛОНЕН(ошибка при получении данных)
 
-//9.44.20
+const myPromise = new Promise((resolve, reject) => {
+    //
+    //Выполнение асинхронных действий
+    //
+    //Внутри этой функции нужно в результате вызвать одну из функций resolve или reject.
+    //Вновь созданный промис будет в состоянии pending(ожидание)
+})
+
+// Получение результата промиса
+
+myPromise
+    .then(value => {
+        //
+        //Действия в случае успешного исполнения Промиса
+        // Значение value - это значение, переданное в вызове функции resolve внутри Промиса
+        //
+    })
+    .catch(error => {
+        //
+        // Действия в случае отклонения Промиса
+        // Значение error - это значение, переданное в вызове функции reject внутри Промиса
+        //
+    })
+
+// fetch() - запрос, возвращающий promise в состоянии pending.
+// Если сервер успешно вернул ответ  вызовится callback функция .then(response => response.json()) и этой функции передастся ответ от сервера. Метод json так же возвращает promise. Далее для этого промиса вызываем .then(json => console.log(json)  Выводится результат данных полученных от сервера (например массив объектов)
+//.catch(error => console.error(error)) - на случай, один из промисов вернул ошибку (стал отклоненным)
+
+/*fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(json => console.log(json))
+.catch(error => console.log(error.message))*/
+
+const getData = (url) =>
+    new Promise((resolve, reject) =>
+        fetch(url)
+            .then(response => response.json())
+            .then(json => resolve(json))
+            .catch(error => reject(error))
+    )
+
+getData('https://jsonplaceholder.typicode.com/todos/1')
+    .then(data => console.log(data))
+    .catch(error => console.log(error.message))
+
+/////////////////////////////////////////////////////////////////////////
+
+// ASYNC/AWAIT     10.23
+
