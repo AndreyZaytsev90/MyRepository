@@ -415,5 +415,74 @@ getData('https://jsonplaceholder.typicode.com/todos/1')
 
 /////////////////////////////////////////////////////////////////////////
 
-// ASYNC/AWAIT     10.23
+// ASYNC/AWAIT - это специальный синтаксис для упрощения работы с промисами (ES6)
 
+// Асинхронная функция - это функция, которая вместо строки, числа и т.д. возвращает Промис:
+
+async function asyncFn() {
+    //Всегда возвращает Промис
+}
+
+// Для стрелочной функции
+const asyncFn2 = async () => {
+    //Всегда возвращает Промис
+}
+//const asyncFN = async () => {
+//     return "Success!"
+// }
+// undefined
+// asyncFN()
+// Promise {<fulfilled>: 'Success!'}
+// [[Prototype]]: Promise
+// [[PromiseState]]: "fulfilled"
+// [[PromiseResult]]: "Success!"
+
+// AWAIT
+
+/*
+const asyncFN3 = async () => {
+  await <Promise>
+}*/
+
+/*const timerPromise = () =>
+    new Promise((resolve, reject) =>
+    setTimeout(() => resolve(), 2000))
+
+const asyncFn4 = async () => {
+    console.log("Timer starts")
+    const timerStarts = performance.now() // засикает время начала
+    await timerPromise()    // Функция дальше не выполняется пока не получен результат Промиса (исполнен/отклонен)
+    const timerEnd = performance.now() // засикает время конца
+    console.log("Timer ended", timerEnd - timerStarts)
+}
+
+asyncFn4()*/
+
+const getData = async (url) => {
+    const res = await fetch(url)
+    const json = await res.json()
+    return json
+}
+/*
+getData('https://jsonplaceholder.typicode.com/todos')
+.then(data => console.log(data))
+.catch(error => console.log(error.message))*/
+
+///Заменим на:
+
+const url = 'https://jsonplaceholder.typicode.com/todos'
+//const data = await getData(url) //нет обработки ошибок
+
+try {
+    const data = await getData(url)
+    console.log(data)
+} catch (error) {
+    console.log(error.message)
+}
+
+// Главное в ASYNC/AWAIT :
+
+//1 - ASYNC/AWAIT - это синтаксическая надстройка над промисами
+//2 - await - возможен только внутри асинхронных функций (async)
+//3 - async функция Всегда возвращает Promise
+//4 - async функция ожидает результата инструкции await и не выполняет последующие инструкции
