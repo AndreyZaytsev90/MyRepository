@@ -1,27 +1,19 @@
 import React from 'react';
 //import logo from './logo.svg';
-//import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 
-/*function hello() {
-    debugger
-    alert("Hello IT-Incubator")
-}*/
-
-//hello();
-
-//function declaration
 function App(props: any) {
     // полезное что-то
     // обязана вернуть JSX
     console.log("App rendering")
     return (
-        <div>
+        <div className={"app"}>
             {/*<PageTitle title={"This is APP component"}/>
             <PageTitle title={"My friends"}/>
             Article 1
@@ -35,16 +27,13 @@ function App(props: any) {
             <Rating value={4}/>
             <Rating value={5}/>*/}
             <OnOff />
-            <OnOff />
-            <OnOff />
             <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
+            <Accordion titleValue={"Menu"} collapsed={false}/>
+
             <UncontrolledRating />
-            <UncontrolledRating />
-            <UncontrolledRating />
-            <UncontrolledRating />
-            <UncontrolledRating />
-            <UncontrolledRating />
+            <Rating value={3} />
+
         </div>
     );
 }

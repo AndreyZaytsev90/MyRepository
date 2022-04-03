@@ -48,3 +48,8 @@
     margin-right: 10px;
     background-color: red;
 }
+
+.app {
+    width: 300px;
+    margin: 100px auto;
+}
