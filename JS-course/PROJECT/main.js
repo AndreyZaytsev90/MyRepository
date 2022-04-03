@@ -1,10 +1,10 @@
-
 'use strict'
 
 function plusOne(b) {
     b++
     return b
 }
+
 console.log(plusOne(23226));
 
 
@@ -23,12 +23,12 @@ console.log(myName);
 //Выражения:  // результаты
 "abc" // строка "abc"
 10 // число 10
-5+2 // сумма
+5 + 2 // сумма
 let cd;
-cd=10 // присвоение переменной cd значения 10
-"good"+"evening" // конкатенация строк 
+cd = 10 // присвоение переменной cd значения 10
+"good" + "evening" // конкатенация строк
 a <= b || с != d // true или false
-myFunction(cd,d) // результат функции
+myFunction(cd, d) // результат функции
 
 // Переменные дают возможность посторного доступа к значениям
 //Имена переменных:
@@ -221,7 +221,6 @@ myFunction(cd,d) // результат функции
 // (a,b) => a+b   - Фигурные скобки можно опустить, если в теле функции только ОДНО выражение. А этом случает стрельчная функция НЕЯВНО возвращает результат выражения
 
 
-
 //Инструкции
 //Есть Выражения - которые всегда возвращают значения
 // Есть инструкции , например let a (объявление переменной - это инструкция)
@@ -237,8 +236,253 @@ myFunction(cd,d) // результат функции
 ////////////////////////////////////////
 
 
-
 // Массив - это объект с цифровыми именами свойств
 // Порядок следования элементов в массиве важен
 
 //Функции высшего порядка в массивах (функции прототипа) - например это filter, map, forEach и т.д.
+
+
+//МОДУЛИ - позволяют структурировать код и позволяют избегать дублирования блоков кода
+// Синтаксис EXPORT/IMPORT появился в ES6
+
+//////////////////////////////////////////////////////////////////////////////
+// Классы и прототипы
+// Классы позволяют создавать прототипы для объектов
+// На основании прототипов создаются экземпляры. Каждый экземпляр имеет собственные свойства и методы. Экземпляры наследуют свойства и методы прототипов
+//Переменная this указывает на экземпляр класса
+
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+}
+
+// Создание экземпляра
+const firstComment = new Comment("First comment") // вызывается функция constructor
+
+// Цепочка прототипов :  firstComment > Comment > Object
+
+//Comment {text: 'First comment', votesQty: 0}
+// text: "First comment"
+// votesQty: 0
+// [[Prototype]]: Object
+
+//firstComment.text
+// 'First comment'
+//firstComment.upvote()  // при каждом вызове upvote значение votesQty увеличивается на 1
+// undefined
+// firstComment.votesQty
+// 1
+
+//Проверка принадлежности свойств экземпляру объекта:
+
+//firstComment.hasOwnProperty('text')
+// true
+
+// firstComment.hasOwnProperty('upvote')
+// false
+
+//Классы созданы для того, чтобы можно было создавать несколько экземпляров объектов с этих классов
+// const firstComment = new Comment("First comment")
+const secondComment = new Comment("Second comment")
+//secondComment.upvote()
+// undefined
+// secondComment.votesQty
+// 1
+// secondComment.upvote()
+// undefined
+// secondComment.votesQty
+// 2
+const thirdComment = new Comment("Third comment")
+
+
+////////////////////////////////////////////
+
+//Статические методы
+class Comment2 {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+
+    static mergeComments(first, second) {
+        return `${first} ${second}`
+    }
+}
+
+Comment2.mergeComments('First comment.', 'Second comment')  // Метод доступен как свойство класса и НЕ НАСЛЕДУЕТСЯ экземплярами класса
+
+
+// Расширение других классов:
+
+class NumbersArray extends Array {  // Родительский конструктор вызовется автоматически
+    sum() {
+        return this.reduce((el, acc) => acc += el, 0)
+    }
+}
+
+const myArray4 = new NumbersArray(2, 5, 7)
+console.log(myArray4)
+myArray4.sum()
+
+///////////////////////////////////////////////
+
+// Что такое прототип.  __proto__ - это скрытое свойство
+/*
+comment.prototype === firstComment.__proto__
+true
+*/
+
+//////////////////////////////////////////////////////////////////
+
+// в JavaScript числа и строки ведут себя как объекты!
+
+// const myFirstName = "Andrey"
+// undefined
+
+// myFirstName
+// 'Andrey'
+
+// myFirstName.length
+// 6
+
+// myFirstName.toUpperCase
+// ƒ toUpperCase() { [native code] }
+
+// myFirstName.toUpperCase()
+// 'ANDREY'
+
+////////////////////////////////////////////////////////////////
+
+//   ПРОМИСЫ - Это ОБЪЕКТЫ, которые позволяют обрабатывать ОТЛОЖЕННЫЕ во времени события
+//   ПРОМИС - это "обещание" предоставить результат ПОЗЖЕ. Промис может вернуть ошибку, если результат предоставить невозможно
+
+// У промиса есть 3 состояния - ОЖИДАНИЕ - ИСПОЛНЕН(например, получен массив с данными от сервера) - ОТКЛОНЕН(ошибка при получении данных)
+
+const myPromise = new Promise((resolve, reject) => {
+    //
+    //Выполнение асинхронных действий
+    //
+    //Внутри этой функции нужно в результате вызвать одну из функций resolve или reject.
+    //Вновь созданный промис будет в состоянии pending(ожидание)
+})
+
+// Получение результата промиса
+
+myPromise
+    .then(value => {
+        //
+        //Действия в случае успешного исполнения Промиса
+        // Значение value - это значение, переданное в вызове функции resolve внутри Промиса
+        //
+    })
+    .catch(error => {
+        //
+        // Действия в случае отклонения Промиса
+        // Значение error - это значение, переданное в вызове функции reject внутри Промиса
+        //
+    })
+
+// fetch() - запрос, возвращающий promise в состоянии pending.
+// Если сервер успешно вернул ответ  вызовится callback функция .then(response => response.json()) и этой функции передастся ответ от сервера. Метод json так же возвращает promise. Далее для этого промиса вызываем .then(json => console.log(json)  Выводится результат данных полученных от сервера (например массив объектов)
+//.catch(error => console.error(error)) - на случай, один из промисов вернул ошибку (стал отклоненным)
+
+/*fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(json => console.log(json))
+.catch(error => console.log(error.message))*/
+
+const getData = (url) =>
+    new Promise((resolve, reject) =>
+        fetch(url)
+            .then(response => response.json())
+            .then(json => resolve(json))
+            .catch(error => reject(error))
+    )
+
+getData('https://jsonplaceholder.typicode.com/todos/1')
+    .then(data => console.log(data))
+    .catch(error => console.log(error.message))
+
+/////////////////////////////////////////////////////////////////////////
+
+// ASYNC/AWAIT - это специальный синтаксис для упрощения работы с промисами (ES6)
+
+// Асинхронная функция - это функция, которая вместо строки, числа и т.д. возвращает Промис:
+
+async function asyncFn() {
+    //Всегда возвращает Промис
+}
+
+// Для стрелочной функции
+const asyncFn2 = async () => {
+    //Всегда возвращает Промис
+}
+//const asyncFN = async () => {
+//     return "Success!"
+// }
+// undefined
+// asyncFN()
+// Promise {<fulfilled>: 'Success!'}
+// [[Prototype]]: Promise
+// [[PromiseState]]: "fulfilled"
+// [[PromiseResult]]: "Success!"
+
+// AWAIT
+
+/*
+const asyncFN3 = async () => {
+  await <Promise>
+}*/
+
+/*const timerPromise = () =>
+    new Promise((resolve, reject) =>
+    setTimeout(() => resolve(), 2000))
+
+const asyncFn4 = async () => {
+    console.log("Timer starts")
+    const timerStarts = performance.now() // засикает время начала
+    await timerPromise()    // Функция дальше не выполняется пока не получен результат Промиса (исполнен/отклонен)
+    const timerEnd = performance.now() // засикает время конца
+    console.log("Timer ended", timerEnd - timerStarts)
+}
+
+asyncFn4()*/
+
+const getData = async (url) => {
+    const res = await fetch(url)
+    const json = await res.json()
+    return json
+}
+/*
+getData('https://jsonplaceholder.typicode.com/todos')
+.then(data => console.log(data))
+.catch(error => console.log(error.message))*/
+
+///Заменим на:
+
+const url = 'https://jsonplaceholder.typicode.com/todos'
+//const data = await getData(url) //нет обработки ошибок
+
+try {
+    const data = await getData(url)
+    console.log(data)
+} catch (error) {
+    console.log(error.message)
+}
+
+// Главное в ASYNC/AWAIT :
+
+//1 - ASYNC/AWAIT - это синтаксическая надстройка над промисами
+//2 - await - возможен только внутри асинхронных функций (async)
+//3 - async функция Всегда возвращает Promise
+//4 - async функция ожидает результата инструкции await и не выполняет последующие инструкции
