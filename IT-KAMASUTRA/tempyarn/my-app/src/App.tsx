@@ -1,39 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 
 function App(props: any) {
     // полезное что-то
     // обязана вернуть JSX
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+    let [indicator, setIndicator] = useState(false)
+
     console.log("App rendering")
     return (
         <div className={"app"}>
-            {/*<PageTitle title={"This is APP component"}/>
-            <PageTitle title={"My friends"}/>
-            Article 1
-            <Rating value={3}/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>*/}
-            <OnOff />
+            {/*<OnOff />
             <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
             <Accordion titleValue={"Menu"} collapsed={false}/>
 
-            <UncontrolledRating />
-            <Rating value={3} />
+            <UncontrolledRating />*/}
+            <Rating value={ratingValue}
+                    onClick={setRatingValue}/>
+            <UncontrolledRating/>
+            <Accordion titleValue={"Menu"}
+                       collapsed={accordionCollapsed}
+                       onClick={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
 
+            <OnOff indicator={indicator} setIndicator={setIndicator}/>
+
+            <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
+            <UncontrolledAccordion titleValue={"Список"}/>
         </div>
     );
 }
