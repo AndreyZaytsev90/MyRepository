@@ -7,6 +7,10 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import UncontrolledInput, {
+    ControlledInputWithFixedValue, GetValueOfUncontrolledInput,
+    TrackValueOfUncontrolledInput
+} from "./components/UncontrolledInput/UncontrolledInput";
 
 
 function App(props: any) {
@@ -26,7 +30,7 @@ function App(props: any) {
             <Accordion titleValue={"Menu"} collapsed={false}/>
 
             <UncontrolledRating />*/}
-            <Rating value={ratingValue}
+            {/*<Rating value={ratingValue}
                     onClick={setRatingValue}/>
             <UncontrolledRating/>
             <Accordion titleValue={"Menu"}
@@ -36,7 +40,12 @@ function App(props: any) {
             <OnOff indicator={indicator} setIndicator={setIndicator}/>
 
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
-            <UncontrolledAccordion titleValue={"Список"}/>
+            <UncontrolledAccordion titleValue={"Список"}/>*/}
+
+            <UncontrolledInput/>
+            <TrackValueOfUncontrolledInput/>
+            <GetValueOfUncontrolledInput/>
+            <ControlledInputWithFixedValue/>
         </div>
     );
 }
