@@ -7,10 +7,12 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import UncontrolledInput, {
-    ControlledInputWithFixedValue, GetValueOfUncontrolledInput,
+import UnControlledInput, {
+    ControlledCheckbox,
+    ControlledInput,
+    ControlledInputWithFixedValue, ControlledSelect, GetValueOfUncontrolledInput,
     TrackValueOfUncontrolledInput
-} from "./components/UncontrolledInput/UncontrolledInput";
+} from "./components/(Un)controlledInput/(Un)controlledInput";
 
 
 function App(props: any) {
@@ -42,10 +44,13 @@ function App(props: any) {
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
             <UncontrolledAccordion titleValue={"Список"}/>*/}
 
-            <UncontrolledInput/>
+            <UnControlledInput/>
             <TrackValueOfUncontrolledInput/>
             <GetValueOfUncontrolledInput/>
             <ControlledInputWithFixedValue/>
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
         </div>
     );
 }
