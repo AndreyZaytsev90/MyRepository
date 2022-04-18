@@ -15,6 +15,7 @@ type AccordionPropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
+    debugger
     console.log("Accordion rendering")
     return <div>
         <AccordionTitle
@@ -31,8 +32,9 @@ type AccordionTitlePropsType = {
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
+    debugger
     console.log("AccordionTitle rendering")
-    return <h3 onChange={props.onChange}>--- {props.title} ---</h3>
+    return <h3 onClick={() => props.onChange()}>--- {props.title} ---</h3>
 }
 
 type AccordionBodyPropsType = {
@@ -42,12 +44,13 @@ type AccordionBodyPropsType = {
 
 
 function AccordionBody(props: AccordionBodyPropsType) {
+    debugger
     console.log("AccordionBody rendering")
     return <ul>
-        {/*{props.items.map((i) => <li onClick={ () => {props.onClick(i.id)} } key={i.id}>{i.title}</li>)}*/}
-        <li>1</li>
+        {props.items.map((item) => <li onClick={() => {props.onClick(item.id)}} key={item.id}>{item.title}</li>)}
+        {/*<li>1</li>
         <li>2</li>
-        <li>3</li>
+        <li>3</li>*/}
     </ul>
 }
 

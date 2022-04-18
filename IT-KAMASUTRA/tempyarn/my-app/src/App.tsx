@@ -41,25 +41,13 @@ function App(props: any) {
             <Accordion
                 titleValue={"Users"}
                 collapsed={accordionCollapsed}
-                onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
+                onChange={() => setAccordionCollapsed(!accordionCollapsed)}
                 onClick={onClickCallback}
                 items={[
-                    {
-                        title: "Andrey",
-                        id: v1()
-                    },
-                    {
-                        title: "Pert",
-                        id: v1()
-                    },
-                    {
-                        title: "Olga",
-                        id: v1()
-                    },
-                    {
-                        title: "Sergey",
-                        id: v1()
-                    },
+                    {title: "Andrey", id: v1()},
+                    {title: "Pert", id: v1()},
+                    {title: "Olga", id: v1()},
+                    {title: "Sergey", id: v1()},
                 ]}
             />
 
