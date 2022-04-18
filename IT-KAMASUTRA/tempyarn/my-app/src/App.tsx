@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
@@ -13,6 +12,7 @@ import UnControlledInput, {
     ControlledInputWithFixedValue, ControlledSelect, GetValueOfUncontrolledInput,
     TrackValueOfUncontrolledInput
 } from "./components/(Un)controlledInput/(Un)controlledInput";
+import {v1} from "uuid";
 
 
 function App(props: any) {
@@ -23,6 +23,9 @@ function App(props: any) {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [indicator, setIndicator] = useState(false)
 
+    const onClickCallback = () => alert("some item was clicked!")
+
+
     console.log("App rendering")
     return (
         <div className={"app"}>
@@ -32,17 +35,38 @@ function App(props: any) {
             <Accordion titleValue={"Menu"} collapsed={false}/>
 
             <UncontrolledRating />*/}
-            {/*<Rating value={ratingValue}
+            {/* <Rating value={ratingValue}
                     onClick={setRatingValue}/>
-            <UncontrolledRating/>
-            <Accordion titleValue={"Menu"}
-                       collapsed={accordionCollapsed}
-                       onClick={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+            <UncontrolledRating/>*/}
+            <Accordion
+                titleValue={"Users"}
+                collapsed={accordionCollapsed}
+                onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
+                onClick={onClickCallback}
+                items={[
+                    {
+                        title: "Andrey",
+                        id: v1()
+                    },
+                    {
+                        title: "Pert",
+                        id: v1()
+                    },
+                    {
+                        title: "Olga",
+                        id: v1()
+                    },
+                    {
+                        title: "Sergey",
+                        id: v1()
+                    },
+                ]}
+            />
 
-            <OnOff indicator={indicator} setIndicator={setIndicator}/>
+            {/* <OnOff indicator={indicator} setIndicator={setIndicator}/>
 
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
-            <UncontrolledAccordion titleValue={"Список"}/>*/}
+            <UncontrolledAccordion titleValue={"Список"}/>
 
             <UnControlledInput/>
             <TrackValueOfUncontrolledInput/>
@@ -50,7 +74,7 @@ function App(props: any) {
             <ControlledInputWithFixedValue/>
             <ControlledInput/>
             <ControlledCheckbox/>
-            <ControlledSelect/>
+            <ControlledSelect/>*/}
         </div>
     );
 }
