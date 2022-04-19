@@ -13,6 +13,7 @@ import UnControlledInput, {
     TrackValueOfUncontrolledInput
 } from "./components/(Un)controlledInput/(Un)controlledInput";
 import {v1} from "uuid";
+import {Select} from "./components/Select/Select";
 
 
 function App(props: any) {
@@ -23,7 +24,7 @@ function App(props: any) {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [indicator, setIndicator] = useState(false)
 
-    const onClickCallback = () => alert("some item was clicked!")
+    const onClickCallback = (id: string) => alert(`user with ID ${id} should be happy!`)
 
 
     console.log("App rendering")
@@ -38,7 +39,7 @@ function App(props: any) {
             {/* <Rating value={ratingValue}
                     onClick={setRatingValue}/>
             <UncontrolledRating/>*/}
-            <Accordion
+            {/*<Accordion
                 titleValue={"Users"}
                 collapsed={accordionCollapsed}
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
@@ -48,9 +49,17 @@ function App(props: any) {
                     {title: "Pert", id: v1()},
                     {title: "Olga", id: v1()},
                     {title: "Sergey", id: v1()},
-                ]}
-            />
-
+                ]}/>*/}
+            <Select
+                id={v1()}
+                collapsed={accordionCollapsed}
+                onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={[
+                    {title: "Andrey", id: v1()},
+                    {title: "Pert", id: v1()},
+                    {title: "Olga", id: v1()},
+                    {title: "Sergey", id: v1()},
+                ]}/>
             {/* <OnOff indicator={indicator} setIndicator={setIndicator}/>
 
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
