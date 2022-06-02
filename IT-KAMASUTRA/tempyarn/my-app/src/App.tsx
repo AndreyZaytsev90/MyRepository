@@ -13,7 +13,9 @@ import UnControlledInput, {
     TrackValueOfUncontrolledInput
 } from "./components/(Un)controlledInput/(Un)controlledInput";
 import {v1} from "uuid";
-import {Select} from "./components/Select/Select";
+import {Select} from "@material-ui/core";
+import {MySelect} from "./components/Select/MySelect";
+
 
 
 function App(props: any) {
@@ -50,7 +52,7 @@ function App(props: any) {
                     {title: "Olga", id: v1()},
                     {title: "Sergey", id: v1()},
                 ]}/>*/}
-            <Select
+            {/*<Select
                 id={v1()}
                 collapsed={accordionCollapsed}
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
@@ -59,7 +61,7 @@ function App(props: any) {
                     {title: "Pert", id: v1()},
                     {title: "Olga", id: v1()},
                     {title: "Sergey", id: v1()},
-                ]}/>
+                ]}/>*/}
             {/* <OnOff indicator={indicator} setIndicator={setIndicator}/>
 
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
@@ -72,6 +74,7 @@ function App(props: any) {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>*/}
+            <MySelect/>
         </div>
     );
 }
