@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
 import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent} from "@material-ui/core";
-import {v1} from "uuid";
 
 /*type ItemsPropsType = {
     title: string
@@ -22,21 +21,20 @@ export function Select(props: SelectPropsType) {
         </div>
     )
 }*/
-type NameType = {
+type ItemType = {
     title: string
     id: string
 }
 
-type UserType = Array<NameType>
+type MySelectPropsType = {
+    value?: string
+    items: Array<ItemType>
 
-export const MySelect = () => {
+}
 
-    const item = [
-        {title: "Andrey", id: v1()},
-        {title: "Petr", id: v1()},
-        {title: "Olga", id: v1()},
-        {title: "Sergey", id: v1()},
-    ]
+export const MySelect = (props: MySelectPropsType) => {
+
+    const selectedItem = props.items.find(i => i.title === props.value)
 
     const [name, setName] = React.useState<string>('Andrey');
 
@@ -45,18 +43,17 @@ export const MySelect = () => {
     };
 
     return (
-        <Box sx={{minWidth: 120}}>
+        <Box sx={{minWidth: 120}} style={{"paddingTop": "100px", "marginLeft": "50px"}}>
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Name</InputLabel>
                 <Select
-                    defaultValue={"Andrey"}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={name}
+                    value={selectedItem && selectedItem.title}
                     label="Name"
                     onChange={handleChange}
                 >
-                    {item.map(n => <MenuItem value={n.title}>{n.title}</MenuItem>)}
+                    {props.items.map(n => <MenuItem key={n.id} value={n.title}>{n.title}</MenuItem>)}
                 </Select>
             </FormControl>
         </Box>

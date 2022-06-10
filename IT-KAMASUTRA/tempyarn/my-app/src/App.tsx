@@ -17,7 +17,6 @@ import {Select} from "@material-ui/core";
 import {MySelect} from "./components/Select/MySelect";
 
 
-
 function App(props: any) {
     // полезное что-то
     // обязана вернуть JSX
@@ -27,6 +26,8 @@ function App(props: any) {
     let [indicator, setIndicator] = useState(false)
 
     const onClickCallback = (id: string) => alert(`user with ID ${id} should be happy!`)
+
+
 
 
     console.log("App rendering")
@@ -74,7 +75,20 @@ function App(props: any) {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>*/}
-            <MySelect/>
+            <MySelect
+
+                      items={[
+                          {title: "Andrey", id: v1()},
+                          {title: "Petr", id: v1()},
+                          {title: "Olga", id: v1()},
+                          {title: "Sergey", id: v1()},
+                      ]}/>
+            <MySelect items={[
+                          {title: "Andrey", id: v1()},
+                          {title: "Petr", id: v1()},
+                          {title: "Olga", id: v1()},
+                          {title: "Sergey", id: v1()},
+                      ]}/>
         </div>
     );
 }
