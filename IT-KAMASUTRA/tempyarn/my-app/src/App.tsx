@@ -15,6 +15,7 @@ import UnControlledInput, {
 import {v1} from "uuid";
 import {Select} from "@material-ui/core";
 import {MySelect} from "./components/Select/MySelect";
+import SelectByDimych from "./components/Select/SelectByDimych";
 
 
 function App(props: any) {
@@ -75,9 +76,7 @@ function App(props: any) {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>*/}
-            <MySelect
-
-                      items={[
+           {/* <MySelect items={[
                           {title: "Andrey", id: v1()},
                           {title: "Petr", id: v1()},
                           {title: "Olga", id: v1()},
@@ -88,7 +87,13 @@ function App(props: any) {
                           {title: "Petr", id: v1()},
                           {title: "Olga", id: v1()},
                           {title: "Sergey", id: v1()},
-                      ]}/>
+                      ]}/>*/}
+            <SelectByDimych id={'1'} collapsed={false} items={[
+                {title: "Andrey", id: v1()},
+                {title: "Petr", id: v1()},
+                {title: "Olga", id: v1()},
+                {title: "Sergey", id: v1()},
+            ]} />
         </div>
     );
 }
