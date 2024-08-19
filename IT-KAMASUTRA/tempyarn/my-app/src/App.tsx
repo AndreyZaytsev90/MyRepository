@@ -1,49 +1,49 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
-import {Rating, RatingValueType} from "./components/Rating/Rating";
+import { Rating, RatingValueType } from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import UnControlledInput, {
-    ControlledCheckbox,
-    ControlledInput,
-    ControlledInputWithFixedValue, ControlledSelect, GetValueOfUncontrolledInput,
-    TrackValueOfUncontrolledInput
+	ControlledCheckbox,
+	ControlledInput,
+	ControlledInputWithFixedValue, ControlledSelect, GetValueOfUncontrolledInput,
+	TrackValueOfUncontrolledInput
 } from "./components/(Un)controlledInput/(Un)controlledInput";
-import {v1} from "uuid";
-import {Select} from "@material-ui/core";
-import {MySelect} from "./components/Select/MySelect";
+import { v1 } from "uuid";
+import { Select } from "@material-ui/core";
+import { MySelect } from "./components/Select/MySelect";
 import SelectByDimych from "./components/Select/SelectByDimych";
 
 
 function App(props: any) {
-    // полезное что-то
-    // обязана вернуть JSX
+	// полезное что-то
+	// обязана вернуть JSX
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
-    let [indicator, setIndicator] = useState(false)
+	let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+	let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+	let [indicator, setIndicator] = useState(false)
 
-    const onClickCallback = (id: string) => alert(`user with ID ${id} should be happy!`)
-
-
+	const onClickCallback = (id: string) => alert(`user with ID ${id} should be happy!`)
 
 
-    console.log("App rendering")
-    return (
-        <div className={"app"}>
-            {/*<OnOff />
+
+
+	console.log("App rendering")
+	return (
+		<div className={"app"}>
+			{/*<OnOff />
             <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
             <Accordion titleValue={"Menu"} collapsed={false}/>
 
             <UncontrolledRating />*/}
-            {/* <Rating value={ratingValue}
+			{/* <Rating value={ratingValue}
                     onClick={setRatingValue}/>
             <UncontrolledRating/>*/}
-            {/*<Accordion
+			{/*<Accordion
                 titleValue={"Users"}
                 collapsed={accordionCollapsed}
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
@@ -54,7 +54,7 @@ function App(props: any) {
                     {title: "Olga", id: v1()},
                     {title: "Sergey", id: v1()},
                 ]}/>*/}
-            {/*<Select
+			{/*<Select
                 id={v1()}
                 collapsed={accordionCollapsed}
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
@@ -64,7 +64,7 @@ function App(props: any) {
                     {title: "Olga", id: v1()},
                     {title: "Sergey", id: v1()},
                 ]}/>*/}
-            {/* <OnOff indicator={indicator} setIndicator={setIndicator}/>
+			{/* <OnOff indicator={indicator} setIndicator={setIndicator}/>
 
             <UncontrolledOnOff onChange={setIndicator}/> {indicator.toString()}
             <UncontrolledAccordion titleValue={"Список"}/>
@@ -76,7 +76,7 @@ function App(props: any) {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>*/}
-           {/* <MySelect items={[
+			{/* <MySelect items={[
                           {title: "Andrey", id: v1()},
                           {title: "Petr", id: v1()},
                           {title: "Olga", id: v1()},
@@ -88,26 +88,30 @@ function App(props: any) {
                           {title: "Olga", id: v1()},
                           {title: "Sergey", id: v1()},
                       ]}/>*/}
-            <SelectByDimych id={'1'} collapsed={false} items={[
-                {title: "Andrey", id: v1()},
-                {title: "Petr", id: v1()},
-                {title: "Olga", id: v1()},
-                {title: "Sergey", id: v1()},
-            ]} />
-        </div>
-    );
+			<SelectByDimych id={'1'} collapsed={false} items={[
+				{ title: "Andrey", id: v1() },
+				{ title: "Petr", id: v1() },
+				{ title: "Olga", id: v1() },
+				{ title: "Sergey", id: v1() }]} />
+
+			<UncontrolledAccordion titleValue={"Menu"} />
+			<UncontrolledAccordion titleValue={"Users"} />
+
+
+			<UncontrolledRating />
+		</div>
+	);
 }
 
 type PageTitlePropsType = {
-    title: string
+	title: string
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
-    return <h1>{props.title}</h1>
+	console.log("PageTitle rendering")
+	return <h1>{props.title}</h1>
 
 }
 
 
 export default App;
-
