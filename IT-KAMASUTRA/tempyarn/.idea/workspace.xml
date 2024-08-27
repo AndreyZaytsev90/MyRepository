@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33a0990e-6a05-4e5e-8555-84ffd10389dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/my-app/src/components/UncontrolledAccordion/UncontrolledAccordion-reducer.ts" afterDir="false" />
+    <list default="true" id="33a0990e-6a05-4e5e-8555-84ffd10389dc" name="Changes" comment="lesson 16 kabzda kak podrobno is done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/components/UncontrolledAccordion/UncontrolledAccordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/UncontrolledAccordion/UncontrolledAccordion.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "ts.external.directory.path": "/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -57,6 +55,42 @@
       </map>
     </option>
   </component>
+  <component name="RunManager" selected="Jest.UncontrolledAccordionReducer.should throw error for unknown action type">
+    <configuration name="UncontrolledAccordionReducer.should throw error for unknown action type" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/my-app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/my-app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/my-app/src/components/UncontrolledAccordion/UncontrolledAccordion-reducer.test.ts" />
+      <test-names>
+        <test-name value="UncontrolledAccordionReducer" />
+        <test-name value="should throw error for unknown action type" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="UncontrolledAccordionReducer.should toggle collapsed state" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/my-app/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/my-app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/my-app/src/components/UncontrolledAccordion/UncontrolledAccordion-reducer.test.ts" />
+      <test-names>
+        <test-name value="UncontrolledAccordionReducer" />
+        <test-name value="should toggle collapsed state" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.UncontrolledAccordionReducer.should throw error for unknown action type" />
+        <item itemvalue="Jest.UncontrolledAccordionReducer.should toggle collapsed state" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,11 +101,23 @@
       <updated>1643637084988</updated>
       <workItem from="1643637086064" duration="89000" />
       <workItem from="1650358109356" duration="712000" />
-      <workItem from="1724740557619" duration="6185000" />
+      <workItem from="1724740557619" duration="11430000" />
     </task>
+    <task id="LOCAL-00001" summary="lesson 16 kabzda kak podrobno is done">
+      <created>1724760682315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724760682315</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lesson 16 kabzda kak podrobno is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 16 kabzda kak podrobno is done" />
   </component>
 </project>
