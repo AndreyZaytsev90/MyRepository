@@ -88,17 +88,17 @@ function App(props: any) {
                           {title: "Olga", id: v1()},
                           {title: "Sergey", id: v1()},
                       ]}/>*/}
-			<SelectByDimych id={'1'} collapsed={false} items={[
+			{/*<SelectByDimych id={'1'} collapsed={false} items={[
 				{ title: "Andrey", id: v1() },
 				{ title: "Petr", id: v1() },
 				{ title: "Olga", id: v1() },
-				{ title: "Sergey", id: v1() }]} />
+				{ title: "Sergey", id: v1() }]} />*/}
 
-			<UncontrolledAccordion titleValue={"Menu"} />
+			{/*<UncontrolledAccordion titleValue={"Menu"} />*/}
 			<UncontrolledAccordion titleValue={"Users"} />
 
 
-			<UncontrolledRating />
+			{/*<UncontrolledRating />*/}
 		</div>
 	);
 }
