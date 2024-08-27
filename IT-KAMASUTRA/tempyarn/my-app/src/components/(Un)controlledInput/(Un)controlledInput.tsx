@@ -1,11 +1,11 @@
- import React, {ChangeEvent, useRef, useState} from 'react';
+ import React, {ChangeEvent, memo, useRef, useState} from 'react';
 
 //Uncontrolled
 
-export const UnControlledInput = () => <input/>
+export const UnControlledInput = memo(()=> <input/>)
 
 
-export const TrackValueOfUncontrolledInput = () => {
+export const TrackValueOfUncontrolledInput = memo(() => {
 
     const [value, setValue] = useState("")
 
@@ -17,10 +17,10 @@ export const TrackValueOfUncontrolledInput = () => {
     return <div><input onChange={(event) => {
         onChange(event)
     }}/> -{value} </div>
-}
+})
 
 
-export const GetValueOfUncontrolledInput = () => {
+export const GetValueOfUncontrolledInput = memo(() => {
 
     const [value, setValue] = useState("")
     const inputRef = useRef<HTMLInputElement>(null)
@@ -35,32 +35,32 @@ export const GetValueOfUncontrolledInput = () => {
         <button onClick={save}>Save</button>
         - actual value: {value}
     </div>
-}
+})
 
 
 //Controlled
 
-export const ControlledInputWithFixedValue = () => <input value={"IT-Incubator"}/>
+export const ControlledInputWithFixedValue = memo(()=> <input value={"IT-Incubator"}/>)
 
 
-export const ControlledInput = () => {
+export const ControlledInput = memo(() => {
 
     const [parentValue, setParentValue] = useState("")
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setParentValue(e.currentTarget.value)
     }
     return <input value={parentValue} onChange={onChange}/>
-}
+})
 
-export const ControlledCheckbox = () => {
+export const ControlledCheckbox = memo(() => {
     const [parentValue, setParentValue] = useState(true)
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setParentValue(e.currentTarget.checked)
     }
     return <input type={"checkbox"} checked={parentValue} onChange={onChange}/>
-}
+})
 
-export const ControlledSelect = () => {
+export const ControlledSelect = memo(() => {
     const [parentValue, setParentValue] = useState<string|undefined>("2")
     const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setParentValue(e.currentTarget.value)
@@ -71,6 +71,6 @@ export const ControlledSelect = () => {
         <option value="2">Minsk</option>
         <option value="3">Kiev</option>
     </select>
-}
+})
 
 export default UnControlledInput;

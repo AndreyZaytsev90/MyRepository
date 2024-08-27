@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 //import "../../App.css"
 
 type PropsType = {
    onChange: (indicator: boolean) => void
 }
 
-function UncontrolledOnOff(props: PropsType) {
+const UncontrolledOnOff = memo(function UncontrolledOnOff(props: PropsType) {
     console.log("OnOff rendering")
 
     let [indicator, setIndicator] = useState(false)
@@ -55,37 +55,38 @@ function UncontrolledOnOff(props: PropsType) {
         <div style={offStyle} onClick={ offClicked }>Off</div>
         <div style={indicatorStyle}/>
     </div>
- /*   if (props.indicator) {
-        return <div>
-            <OnOffTrue/>
-        </div>
+    /*   if (props.indicator) {
+           return <div>
+               <OnOffTrue/>
+           </div>
 
-    } else {
-        return <div>
-            <OnOffFalse/>
-        </div>
+       } else {
+           return <div>
+               <OnOffFalse/>
+           </div>
 
-    }
-}
+       }
+   }
 
-function OnOffTrue() {
-    return (
-        <div className="OnOff">
-            <div className="onGreen">On</div>
-            <div className="offWhite">Off</div>
-            <div className="bulbGreen"/>
-        </div>
-    )
-}
+   function OnOffTrue() {
+       return (
+           <div className="OnOff">
+               <div className="onGreen">On</div>
+               <div className="offWhite">Off</div>
+               <div className="bulbGreen"/>
+           </div>
+       )
+   }
 
-function OnOffFalse() {
-    return (
-        <div className="OnOff">
-            <div className="onWhite">On</div>
-            <div className="offRed">Off</div>
-            <div className="bulbRed"/>
-        </div>
-    )*/
-}
+   function OnOffFalse() {
+       return (
+           <div className="OnOff">
+               <div className="onWhite">On</div>
+               <div className="offRed">Off</div>
+               <div className="bulbRed"/>
+           </div>
+       )*/
+})
+
 
 export default UncontrolledOnOff;

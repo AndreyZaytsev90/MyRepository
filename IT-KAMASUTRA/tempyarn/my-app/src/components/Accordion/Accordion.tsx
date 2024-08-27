@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 
 type ItemsPropsType = {
@@ -14,7 +14,7 @@ type AccordionPropsType = {
     onClick: (id: string) => void
 }
 
-function Accordion(props: AccordionPropsType) {
+const Accordion = memo(function Accordion(props: AccordionPropsType) {
     debugger
     console.log("Accordion rendering")
     return <div>
@@ -23,7 +23,8 @@ function Accordion(props: AccordionPropsType) {
             onChange={props.onChange}/>
         {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
     </div>
-}
+})
+
 
 
 type AccordionTitlePropsType = {
@@ -31,11 +32,12 @@ type AccordionTitlePropsType = {
     onChange: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+const AccordionTitle = memo(function AccordionTitle(props: AccordionTitlePropsType) {
     debugger
     console.log("AccordionTitle rendering")
     return <h3 onClick={() => props.onChange()}>--- {props.title} ---</h3>
-}
+})
+
 
 type AccordionBodyPropsType = {
     items: Array<ItemsPropsType>
@@ -43,7 +45,7 @@ type AccordionBodyPropsType = {
 }
 
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionBody = memo(function AccordionBody(props: AccordionBodyPropsType) {
     debugger
     console.log("AccordionBody rendering")
     return <ul>
@@ -52,6 +54,7 @@ function AccordionBody(props: AccordionBodyPropsType) {
         <li>2</li>
         <li>3</li>*/}
     </ul>
-}
+})
+
 
 export default Accordion

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 import {Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent} from "@material-ui/core";
 
 /*type ItemsPropsType = {
@@ -32,14 +32,14 @@ type MySelectPropsType = {
 
 }
 
-export const MySelect = (props: MySelectPropsType) => {
+export const MySelect = memo((props: MySelectPropsType) => {
 
     const selectedItem = props.items.find(i => i.title === props.value)
 
     const [name, setName] = React.useState<string>('Andrey');
 
     const handleChange = (event: SelectChangeEvent) => {
-       setName(event.target.value as string);
+        setName(event.target.value as string);
     };
 
     return (
@@ -58,7 +58,7 @@ export const MySelect = (props: MySelectPropsType) => {
             </FormControl>
         </Box>
     );
-}
+})
 
 
 

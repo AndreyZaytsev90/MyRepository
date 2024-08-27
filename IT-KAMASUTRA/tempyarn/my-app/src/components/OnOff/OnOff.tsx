@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 //import "../../App.css"
 
 type PropsType = {
@@ -6,7 +6,7 @@ type PropsType = {
     setIndicator: (indicator: boolean) => void
 }
 
-function OnOff(props: PropsType) {
+const OnOff = memo(function OnOff(props: PropsType) {
     console.log("OnOff rendering")
 
 
@@ -77,6 +77,7 @@ function OnOff(props: PropsType) {
                <div className="bulbRed"/>
            </div>
        )*/
-}
+})
+
 
 export default OnOff;

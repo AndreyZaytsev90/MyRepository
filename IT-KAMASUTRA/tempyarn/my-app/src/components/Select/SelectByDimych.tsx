@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 
 type ItemsPropsType = {
@@ -13,7 +13,7 @@ type SelectPropsType = {
     items: Array<ItemsPropsType>
 }
 
-export function SelectByDimych(props: SelectPropsType) {
+export const SelectByDimych = memo(function SelectByDimych(props: SelectPropsType) {
 
     const selectItem = props.items.find((i) => props.id === i.id)
 
@@ -24,7 +24,7 @@ export function SelectByDimych(props: SelectPropsType) {
             {props.items.map(item => <div>{item.title}</div>)}
         </div>
     )
-}
+})
 
 
 export default SelectByDimych;
