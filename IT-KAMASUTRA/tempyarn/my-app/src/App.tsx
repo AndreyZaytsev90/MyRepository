@@ -16,6 +16,7 @@ import { v1 } from "uuid";
 import { Select } from "@material-ui/core";
 import { MySelect } from "./components/Select/MySelect";
 import SelectByDimych from "./components/Select/SelectByDimych";
+import {HelpToUseMemo, UseMemo} from "./components/UseMemo";
 
 
 function App(props: any) {
@@ -95,9 +96,9 @@ function App(props: any) {
 				{ title: "Sergey", id: v1() }]} />*/}
 
 			{/*<UncontrolledAccordion titleValue={"Menu"} />*/}
-			<UncontrolledAccordion titleValue={"Users"} />
-
-
+			{/*<UncontrolledAccordion titleValue={"Users"} />*/}
+			<UseMemo/>
+			<HelpToUseMemo/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);
