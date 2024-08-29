@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33a0990e-6a05-4e5e-8555-84ffd10389dc" name="Changes" comment="lesson 18 (memo) kabzda kak podrobno is done">
-      <change afterPath="$PROJECT_DIR$/my-app/src/components/UseMemo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/UseMemo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/UseMemoUseCallback.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,22 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/user/MyRepository/IT-KAMASUTRA/tempyarn&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/user/IT-INC-counter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/react-scripts",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/home/user/MyRepository/IT-KAMASUTRA/tempyarn/my-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -105,7 +105,10 @@
       <workItem from="1643637086064" duration="89000" />
       <workItem from="1650358109356" duration="712000" />
       <workItem from="1724740557619" duration="12851000" />
-      <workItem from="1724821421216" duration="8430000" />
+      <workItem from="1724821421216" duration="8461000" />
+      <workItem from="1724834157630" duration="38000" />
+      <workItem from="1724851518041" duration="1149000" />
+      <workItem from="1724908203479" duration="5914000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 16 kabzda kak podrobno is done">
       <created>1724760682315</created>
@@ -135,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724834105903</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lesson 18 (memo) kabzda kak podrobno is done">
+      <created>1724834128063</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724834128063</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

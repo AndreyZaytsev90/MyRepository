@@ -16,7 +16,7 @@ import { v1 } from "uuid";
 import { Select } from "@material-ui/core";
 import { MySelect } from "./components/Select/MySelect";
 import SelectByDimych from "./components/Select/SelectByDimych";
-import {HelpToUseMemo, UseMemo} from "./components/UseMemo";
+import {HelpToUseMemo, LikeUseCallback, UseMemoUseCallback} from "./components/UseMemoUseCallback";
 
 
 function App(props: any) {
@@ -32,7 +32,7 @@ function App(props: any) {
 
 
 
-	console.log("App rendering")
+	//console.log("App rendering")
 	return (
 		<div className={"app"}>
 			{/*<OnOff />
@@ -97,8 +97,9 @@ function App(props: any) {
 
 			{/*<UncontrolledAccordion titleValue={"Menu"} />*/}
 			{/*<UncontrolledAccordion titleValue={"Users"} />*/}
-			<UseMemo/>
-			<HelpToUseMemo/>
+			{/*<UseMemo/>
+			<HelpToUseMemo/>*/}
+			<LikeUseCallback/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);

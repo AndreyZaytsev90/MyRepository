@@ -1,6 +1,6 @@
-import React, {memo, useMemo, useState} from 'react';
+import React, {memo, useCallback, useMemo, useState} from 'react';
 
-export const UseMemo = () => {
+export const UseMemoUseCallback = () => {
 
     const [a, setA] = useState(5)
     const [b, setB] = useState(5)
@@ -80,12 +80,62 @@ export const HelpToUseMemo = () => {
             <span>Counter:{counter}</span>
             <hr/>
             <button onClick={addUser}>addUser</button>
-           {/* <span>{newArray.map((item) => (
-                <div>
-                    {item}
-                </div>
-            ))}</span>*/}
             <Users users={newArray}/>
+        </>
+
+    )
+}
+
+
+
+/*----------------------------useCallback----------------------------------*/
+
+type BooksType = {
+    books: string[],
+    callback: ()=> void
+}
+const BooksSecret: React.FC<BooksType> = ({books, callback}) => {
+    console.log('Books')
+    return (
+        <div>
+            <button onClick={callback}>add-book</button>
+            {books.map((book, index) => (
+                <div key={index}>{book}</div>
+            ))}
+        </div>
+    );
+};
+
+const Books = memo(BooksSecret)
+export const LikeUseCallback = () => {
+    console.log('LikeUseCallback')
+    const [counter, setCounter] = useState(0)
+
+    const [books, setBooks] = useState(['React', 'JavaScript', 'CSS'])
+
+   /* const newArray = useMemo(() => {
+        return books.filter((b) => b.toLowerCase().indexOf('a') > -1)
+    }, [books])*/
+
+    const addBook = () => {
+        const newBook = [...books, 'Angular']
+        setBooks(newBook)
+    }
+
+    const memoizedAddBook = useMemo(()=>{
+        return addBook
+    }, [books])
+
+    const memoizedAddBook2 = useCallback(addBook,[books])
+
+    return (
+        <>
+            <hr/>
+            <button onClick={() => setCounter(counter + 1)}>+</button>
+            <span>Counter:{counter}</span>
+            <hr/>
+
+            <Books books={books} callback={memoizedAddBook2}/>
         </>
 
     )
