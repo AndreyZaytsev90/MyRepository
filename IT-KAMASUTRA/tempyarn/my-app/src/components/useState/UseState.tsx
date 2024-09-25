@@ -1,12 +1,16 @@
 import {useState} from "react";
 
-export const UseState = () => {
+function generateNumber() {
+    return 1613461864646168
+}
 
-    const [counter, setCounter] = useState(0)
+export const UseState = () => {
+    console.log("render")
+    const [counter, setCounter] = useState(generateNumber)
     return (
         <>
             <span>{counter}</span>
-        <button onClick={()=> setCounter(counter+1)}>+</button>
+            <button onClick={() => setCounter(counter + 1)}>+</button>
         </>
     );
 };
