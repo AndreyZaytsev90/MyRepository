@@ -1,13 +1,13 @@
 import {useEffect, useState} from "react";
 
-export const UseEffect = () => {
+export const SimpleExampleUseEffect = () => {
     console.log("ComponentUE")
 
     const [counter, setCounter] = useState(1)
     const [fake, setFake] = useState(1)
 
-    useEffect(()=>{
-        debugger
+    useEffect(() => {
+        //debugger
         console.log("useEffect")
         document.title = counter.toString()
         //Примеры sideEffect
@@ -28,6 +28,37 @@ export const UseEffect = () => {
             <span>Hello, {counter}</span>
             <button onClick={() => setCounter(counter + 1)}>+</button>
             {fake}
+            <button onClick={() => setFake(fake + 1)}>+</button>
+
+        </>
+    );
+};
+
+export const SetTimeOutExampleUseEffect = () => {
+    console.log("ComponentUE")
+
+    const [counter, setCounter] = useState(1)
+    const [fake, setFake] = useState(1)
+
+    /*
+    useEffect(() => {
+            setTimeout(() => {
+                console.log("setTimeout")
+                document.title = counter.toString()
+            }, 1000)
+
+            setInterval(() => {
+               // setCounter(counter + 1)
+                setCounter(state => state +1)
+            }, 1000)
+        }, []
+    )
+    */
+
+    return (
+        <>
+            <span>Hello, counter: {counter} ---- fake: {fake}</span>
+            <button onClick={() => setCounter(counter + 1)}>+</button>
             <button onClick={() => setFake(fake + 1)}>+</button>
 
         </>
