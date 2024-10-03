@@ -18,6 +18,7 @@ import { MySelect } from "./components/Select/MySelect";
 import SelectByDimych from "./components/Select/SelectByDimych";
 import {HelpToUseMemo, LikeUseCallback, UseMemoUseCallback} from "./components/UseMemoUseCallback";
 import {UseState} from "./components/useState/UseState";
+import {UseEffect} from "./components/UseEffect/UseEffect";
 
 
 function App(props: any) {
@@ -101,7 +102,8 @@ function App(props: any) {
 			{/*<UseMemo/>
 			<HelpToUseMemo/>*/}
 			{/*<LikeUseCallback/>*/}
-			<UseState/>
+			{/*<UseState/>*/}
+			<UseEffect/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);
