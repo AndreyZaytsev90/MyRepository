@@ -19,6 +19,7 @@ import SelectByDimych from "./components/Select/SelectByDimych";
 import {HelpToUseMemo, LikeUseCallback, UseMemoUseCallback} from "./components/UseMemoUseCallback";
 import {UseState} from "./components/useState/UseState";
 import {SetTimeOutExampleUseEffect, SimpleExampleUseEffect} from "./components/UseEffect/UseEffect";
+import Clock from "./components/Clock/Clock";
 
 
 function App(props: any) {
@@ -104,7 +105,8 @@ function App(props: any) {
 			{/*<LikeUseCallback/>*/}
 			{/*<UseState/>*/}
 			{/*<SimpleExampleUseEffect/>*/}
-			<SetTimeOutExampleUseEffect/>
+			{/*<SetTimeOutExampleUseEffect/>*/}
+			<Clock/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);
