@@ -20,6 +20,7 @@ import {HelpToUseMemo, LikeUseCallback, UseMemoUseCallback} from "./components/U
 import {UseState} from "./components/useState/UseState";
 import {SetTimeOutExampleUseEffect, SimpleExampleUseEffect} from "./components/UseEffect/UseEffect";
 import Clock from "./components/Clock/Clock";
+import {DimychClock} from "./components/Clock/DimychClock";
 
 
 function App(props: any) {
@@ -106,7 +107,8 @@ function App(props: any) {
 			{/*<UseState/>*/}
 			{/*<SimpleExampleUseEffect/>*/}
 			{/*<SetTimeOutExampleUseEffect/>*/}
-			<Clock/>
+			{/*<Clock/>*/}
+			<DimychClock/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);
