@@ -108,7 +108,8 @@ function App(props: any) {
 			{/*<SimpleExampleUseEffect/>*/}
 			{/*<SetTimeOutExampleUseEffect/>*/}
 			{/*<Clock/>*/}
-			<DimychClock/>
+			<DimychClock mode ={'digital'}/>
+			<DimychClock mode = {'analog'}/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);

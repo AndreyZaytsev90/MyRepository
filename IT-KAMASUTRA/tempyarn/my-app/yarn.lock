@@ -1313,6 +1313,14 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@hoseinh/react-analog-clock@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@hoseinh/react-analog-clock/-/react-analog-clock-1.0.4.tgz#24950fe787d9d250b128c2860360d9eebad15ecd"
+  integrity sha512-iCKy9EFwqXdVwkb0Q+PfkvJnRS07FkXys2ASIwcYG8v4rQOrEFugbFyhxisp2tMtLJgkyLwrARuhKhPMIHQ2cQ==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.7.tgz#38aec044c6c828f6ed51d5d7ae3d9b9faf6dbb0f"
