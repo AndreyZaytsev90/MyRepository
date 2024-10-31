@@ -18,7 +18,12 @@ import { MySelect } from "./components/Select/MySelect";
 import SelectByDimych from "./components/Select/SelectByDimych";
 import {HelpToUseMemo, LikeUseCallback, UseMemoUseCallback} from "./components/UseMemoUseCallback";
 import {UseState} from "./components/useState/UseState";
-import {SetTimeOutExampleUseEffect, SimpleExampleUseEffect} from "./components/UseEffect/UseEffect";
+import {
+	KeyTracker,
+	ResetEffect, SetTimeOut,
+	SetTimeOutExampleUseEffect,
+	SimpleExampleUseEffect
+} from "./components/UseEffect/UseEffect";
 import Clock from "./components/Clock/Clock";
 import {DimychClock} from "./components/Clock/DimychClock";
 
@@ -108,8 +113,13 @@ function App(props: any) {
 			{/*<SimpleExampleUseEffect/>*/}
 			{/*<SetTimeOutExampleUseEffect/>*/}
 			{/*<Clock/>*/}
-			<DimychClock mode ={'digital'}/>
-			<DimychClock mode = {'analog'}/>
+
+			{/*<DimychClock mode ={'digital'}/>
+			<DimychClock mode = {'analog'}/>*/}
+
+			<ResetEffect/>
+			<KeyTracker/>
+			<SetTimeOut/>
 			{/*<UncontrolledRating />*/}
 		</div>
 	);

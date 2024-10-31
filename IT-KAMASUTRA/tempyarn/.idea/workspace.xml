@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33a0990e-6a05-4e5e-8555-84ffd10389dc" name="Changes" comment="lesson 23 (useEffect) kabzda kak podrobno is Done">
+    <list default="true" id="33a0990e-6a05-4e5e-8555-84ffd10389dc" name="Changes" comment="lesson 24 (Clocks) kabzda kak podrobno is Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/UseEffect/UseEffect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/UseEffect/UseEffect.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +134,8 @@
       <workItem from="1729168093849" duration="2427000" />
       <workItem from="1729228012496" duration="7684000" />
       <workItem from="1729495858370" duration="3246000" />
+      <workItem from="1730274292664" duration="7313000" />
+      <workItem from="1730354365267" duration="7626000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 16 kabzda kak podrobno is done">
       <created>1724760682315</created>
@@ -231,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729499107607</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="lesson 24 (Clocks) kabzda kak podrobno is Done">
+      <created>1730291682952</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730291682952</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +270,8 @@
     <MESSAGE value="lesson 23 (useEffect) kabzda kak podrobno continues" />
     <MESSAGE value="lesson 22 (useEffect) kabzda kak podrobno is Done" />
     <MESSAGE value="lesson 23 (useEffect) kabzda kak podrobno is Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 23 (useEffect) kabzda kak podrobno is Done" />
+    <MESSAGE value="lesson 24 (Clocks) kabzda kak podrobno is Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 24 (Clocks) kabzda kak podrobno is Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

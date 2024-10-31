@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {log} from "util";
 
 export const SimpleExampleUseEffect = () => {
     console.log("ComponentUE")
@@ -64,3 +65,76 @@ export const SetTimeOutExampleUseEffect = () => {
         </>
     );
 };
+
+
+export const ResetEffect = () => {
+    const [counter, setCounter] = useState(1)
+
+    console.log('Rendered')
+
+    useEffect(() => {
+        console.log('Effect occurred')
+
+        return () => console.log('reset effect')
+    }, [])
+
+    const increase = () => setCounter(counter + 1)
+
+
+    return (
+        <>
+            Hello, counter: {counter}
+            <button onClick={increase}>+</button>
+        </>
+    )
+}
+
+
+export const KeyTracker = () => {
+
+    const [text, setText] = useState('')
+
+    console.log('Rendered')
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            setText((prevText) => prevText + e.key)
+        }
+
+        window.addEventListener('keypress', handler)
+        //Зачистка
+        return () => {
+            window.removeEventListener('keypress', handler)
+        }
+    }, [])
+
+
+    return (
+        <>
+            Tracker text: {text}
+        </>
+    )
+}
+
+export const SetTimeOut = () => {
+
+    const [text, setText] = useState('')
+
+
+    useEffect(() => {
+        const timeOutId = setTimeout(()=> {
+            setText('3 seconds passed')
+        }, 3000)
+        //Зачистка
+        return () => {
+            clearTimeout(timeOutId)
+        }
+    }, [text])
+
+
+    return (
+        <>
+            Tracker text: {text}
+        </>
+    )
+}
